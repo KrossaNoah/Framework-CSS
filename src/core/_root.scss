@@ -1,0 +1,17 @@
+@use '@core/mixins/map_to_root' as *;
+@use '@core/config/color' as *;
+
+:root {
+  @include map-to-root('clr', $color-palette-map);
+
+}
+
+// Dark mode
+.dark-mode {
+  @include map-to-root('clr', $color-palette-dark)
+}
+
+// Dark light
+.light-mode {
+  @include map-to-root('clr', $color-palette-light)
+}
