@@ -42,6 +42,7 @@
 @use 'light' as *;
 @use 'dark' as *;
 @use 'primary' as *;
+@use 'danger' as *;
 
 
 
@@ -51,19 +52,21 @@
 $color-palette-map: (
   dark: $color-context-dark,
   light: $color-context-light,
-  primary: $color-context-primary
-
+  primary: $color-context-primary,
+  danger: $color-context-danger
 );
-
+$color-context-keys: map.keys($color-palette-map);
 
 //? @mode:light
 /// Apply exclusivly to light mode root.
 $color-palette-light:map.merge(
   $color-context-light,
   (
-    primary: $color-context-primary-light
+    primary: $color-context-primary-light,
+    danger: $color-context-danger-light
   )
 );
+
 
 
 //? @mode:dark
@@ -71,6 +74,10 @@ $color-palette-light:map.merge(
 $color-palette-dark: map.merge(
   $color-context-dark,
   (
-    primary: $color-context-primary-dark
+    primary: $color-context-primary-dark,
+    danger: $color-context-danger-dark
   )
 );
+    
+//? @module-name: clr
+$color-module-name: 'clr';

@@ -1,0 +1,46 @@
+
+//? [!] DESCRIPTION: 
+/// In this file put normalize styles, no classes, no advancend 
+/// styles just a styles to unify default browsers styles.
+
+
+//? *
+//? *::before
+//? *::after
+/// all elements and pseudo elements.
+* {
+  &::after,
+  &::before,
+  & {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+
+//? <html>
+html {
+  /// To make 1rem = 10px (just in font-size context).
+  font-size: 62.5%;
+}
+
+
+
+//? <body>
+/// Body take default container color as background and 
+/// on-container as text color. 
+body {
+  background-color: var(--clr-container);
+  color: var(--clr-on-container);
+  font-family: var(--fm-primary);
+  font-size: var(--fs-normal);
+}
+
+
+
+
+button {
+  font-weight: var(--fw-medium);
+  font-family: inherit;
+}

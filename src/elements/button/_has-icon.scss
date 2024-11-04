@@ -1,0 +1,26 @@
+@use '@core/config/layout/element' as *;
+
+
+//? @modefier: --has-icon
+/// For buttons that has an icon in left position.
+/// <span> child element only most be a icon.
+
+//? usage:
+/// button(class="button button--has-icon")
+///   Button
+///   span(class="icon")
+
+.button {
+  &--has-icon {
+    padding-left: 0;
+
+    /// Icon
+    span { 
+      /// has a border right to separate icon from the rest of
+      /// button content.
+      border-right: 1px solid var(--clr-container);
+      width:  $element-height-default;
+      height:  $element-height-default;
+    }
+  }
+}

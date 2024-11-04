@@ -1,0 +1,68 @@
+@use '@core/config/layout/element' as *;
+@use '@core/mixins/flex' as *;
+@use '@core/mixins/transition' as *;
+@use '@core/functions/spacing' as *;
+
+.dropdown {
+  position: relative;
+  display: table;
+}
+
+
+//? @child: __button
+/// Trigger button, that toggle __menu visibility.
+.dropdown {
+  &__button {
+    outline: none;
+  } 
+}
+
+
+
+//? @child: __menu
+/// collapsable menu of dropdown, most change it state when
+/// you click __button.
+.dropdown {
+  &__menu {
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: $element-height-default + 3px;
+    right: 0;
+    background-color: var(--clr-surface);
+    padding: space(2);
+    
+    @include flex($direction:column);
+    gap: space(1);
+    
+    //? @child:<li> 
+    li {width: 100%;}
+    
+    //? @child: <a>
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      padding: space(3);
+      width: 100%;
+      @include transition((background-color));
+      
+      &:hover {
+        background-color: var(--clr-alt-surface);
+      }
+    }
+  } 
+}
+//? @child-modefier: __menu--collapsed
+/// This modefier apply to menu and just set display none to
+/// hide the menu.
+.dropdown {
+  &__menu--collapsed {
+    display: none;
+  } 
+} 
+
+
+//? usage:
+/// div(class="dropdown")
+///   

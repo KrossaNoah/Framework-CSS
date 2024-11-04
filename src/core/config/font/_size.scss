@@ -1,0 +1,30 @@
+@use 'sass:map';
+
+$font-size-base: (
+  xx-small: 1rem,
+  x-small: 1.2rem,
+  small: 1.4rem,
+  normal: 1.6rem, // default
+  medium: 1.8rem, 
+  large: 2.4rem,
+  x-large: 2.8rem,
+  xx-large: 3.4rem
+);
+
+$font-size-default: map.get($font-size-base, normal);
+
+$font-size-heading: (
+  h1: 3.4rem,
+  h2: 2.4rem,
+  h3: 1.8rem,
+  h4: 1.4rem,
+  h5: 1.2rem,
+  h6: 1rem,
+);
+
+
+$font-size-module-name: 'fs';
+$font-size-map: map.merge(
+  $font-size-base,
+  $font-size-heading
+);

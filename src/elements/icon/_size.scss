@@ -1,0 +1,21 @@
+@use '@core/config/icon' as *;
+
+
+//? @modefier: --x<size>
+/// Change icon size using config icon size options.
+
+//? usage:
+/// span(class="icon icon--x14")
+/// span(class="icon icon--x16")
+/// span(class="icon icon--x20")
+/// span(class="icon icon--x24")
+/// span(class="icon icon--x28")
+/// ...
+
+.icon {
+  @each $key, $value in $icon-size {
+    &--#{$key} {
+      font-size: $value;
+    }
+  }
+}

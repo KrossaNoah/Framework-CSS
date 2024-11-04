@@ -1,0 +1,24 @@
+@use '@core/mixins/themed' as *;
+@use '@core/config/color' as *;
+
+//? @modefier: --<context>
+/// contexts: primary, dark, light, danger...
+
+//? usage:
+/// button(class="button button--<context>"). 
+
+.button {
+  @each $context in $color-context-keys {
+    &--#{$context} {
+      @include themed($context, true);
+     
+      /// Buttons that have icon have to apply a border right
+      /// compatible with the context.
+      &.button--has-icon {
+        span {
+          border-color: var(--clr-container-#{$context});
+        }
+      }
+    }   
+  }
+}

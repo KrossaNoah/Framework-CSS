@@ -1,0 +1,28 @@
+@use '@core/config/spacing' as *;
+
+@each $key, $value in $spacing-scale-names {
+  /// margin
+  .p-#{$key} {
+    padding: $value;
+  }
+
+  /// margin-top
+  .pt-#{$key} {
+    padding-top: $value;
+  }
+
+  /// margin-right
+  .pr-#{$key} {
+    padding-right: $value;
+  }
+
+  /// margin-bottom
+  .pb-#{$key} {
+    padding-bottom: $value;
+  }
+
+  /// margin-bottom
+  .pl-#{$key} {
+    padding-left: $value;
+  }
+}

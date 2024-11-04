@@ -1,0 +1,14 @@
+@use 'sass:map';
+
+$icon-size: (
+ x14: 14px,
+ x16: 16px,
+ x20: 20px,
+ x24: 24px,
+ x32: 32px,
+ x48: 48px,
+ x64: 64px,
+ x96: 96px,
+);
+
+$icon-size-default: map.get($icon-size, x20);

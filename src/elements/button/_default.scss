@@ -1,0 +1,25 @@
+@use "@core/functions/spacing" as *;
+@use "@core/config/layout" as *;
+@use "@core/mixins/flex" as *;
+@use "@core/mixins/themed" as *;
+
+//? @default:.button
+/// Default button class, by default uses themed default 
+/// context.
+
+//? usage:
+/// button(class="button")
+
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  padding-left: space(5);
+  padding-right: space(5);
+  gap: space(5);
+  font-size: var(--fs-medium);
+  height: $element-height-default;
+  font-weight: var(--fw-medium);
+  @include flex($align: center, $inline:true);
+  @include themed($reactive: true);
+}
+

@@ -1,0 +1,23 @@
+//? @context:danger
+$color-context-danger: (
+  surface:        hsl(0, 100%, 60%),
+  on-surface:     hsl(0, 100%, 100%),
+  alt-surface:    hsl(0, 80%, 60%),
+  alt-on-surface: hsl(0, 100%, 95%),
+  outline:        hsla(0, 100%, 50%, 0.5)
+);
+
+
+
+//? @mode:dark
+$color-context-danger-dark: (
+  container:    hsl(0, 100%, 5%),
+  on-container: hsl(0, 100%, 90%),
+);
+
+
+//? @mode:light
+$color-context-danger-light: (
+  container:    hsl(0, 100%, 90%),
+  on-container: hsl(0, 100%, 5%),
+);

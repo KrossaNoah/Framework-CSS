@@ -1,17 +1,26 @@
 @use '@core/mixins/map_to_root' as *;
 @use '@core/config/color' as *;
+@use '@core/config/font' as *;
 
 :root {
-  @include map-to-root('clr', $color-palette-map);
+  /// Color base
+  @include map-to-root($color-module-name, $color-palette-map);
+
+  /// Font size
+  @include map-to-root($font-size-module-name, $font-size-map);
+  // Font Weight
+  @include map-to-root($font-weight-module-name, $font-weight);
+  // Font Family
+  @include map-to-root($font-family-module-name, (primary: $font-family-primary));
 
 }
 
 // Dark mode
 .dark-mode {
-  @include map-to-root('clr', $color-palette-dark)
+  @include map-to-root($color-module-name, $color-palette-dark)
 }
 
 // Dark light
 .light-mode {
-  @include map-to-root('clr', $color-palette-light)
+  @include map-to-root($color-module-name, $color-palette-light)
 }

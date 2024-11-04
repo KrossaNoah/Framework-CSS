@@ -5,10 +5,62 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body class="dark-mode">
-    <div id="app">
-      <button>Button</button>
+    <div id="app m-5">
+      <div class="m-medium">
+        <button class="button button--has-icon button--">
+          <span class="icon ">
+            <i class="fa-solid fa-caret-down"></i>
+          </span>
+          Button
+        </button>
+        <br>
+        <br>
+        <button class="button button--has-icon">
+          <span class="icon icon--x28">
+            :D
+          </span>
+          Button
+        </button>
+        <br>
+        <br>
+        <button class="button button--danger button--block">
+          <span class="icon icon--x16">
+            :D
+          </span>
+        </button>
+        <br>
+        <br>
+
+        <div class="dropdown">
+          <button class="button button--has-icon dropdown__button">
+            <span class="icon">
+              <i class="fa-solid fa-caret-down"></i>
+            </span>
+            Dropdown Button
+          </button>
+
+          <ul class="dropdown__menu dropdown__menu--">
+            <li>
+              <a href="#">Lorem, ipsum.</a>
+            </li>
+
+            <li>
+              <a href="#"> Lorem ipsum dolor sit. Lorem ipsum dolor sit amet. Lorem, ipsum.</a>
+            </li>
+
+            <li>
+              <a href="#">Lorem, ipsum.</a>
+            </li>
+
+            <li>
+              <a href="#">Lorem, ipsum.</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>

@@ -1,0 +1,48 @@
+@use 'transition' as *;
+
+/// This mixin use color context to generate themed class
+/// modefier.
+/// @param $context the color context modefier, "default" by 
+/// default.
+
+/// @param $reactive
+
+@mixin themed($context:default, $reactive:false) {
+  $background-color: var(--clr-surface);
+  $text-color: var(--clr-on-surface);
+
+  @if $context != default {
+    $background-color: var(--clr-surface-#{$context});
+    $text-color: var(--clr-on-surface-#{$context});
+  }
+
+  border: none;
+  color: $text-color;
+
+  @include transition((outline-color, background-color));
+  overflow: hidden;
+  outline: 3px solid transparent;
+  background-color: $background-color;
+  
+  @if $reactive == true {
+    $text-color: var(--clr-alt-on-surface);
+    $background-color: var(--clr-alt-surface);
+    $outline-color: var(--clr-outline);
+    
+    @if $context != default {
+      $background-color: var(--clr-alt-surface-#{$context});
+      $text-color: var(--clr-alt-on-surface-#{$context});
+      $outline-color: var(--clr-outline-#{$context});
+    }
+    
+    &:hover {
+      background-color: $background-color;
+    }
+    
+    &:focus {
+      position: relative;  
+      color: $text-color;
+      outline-color: $outline-color;
+    }
+  }
+} 

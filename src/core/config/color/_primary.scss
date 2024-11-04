@@ -1,9 +1,10 @@
 //? @context:primary
 $color-context-primary: (
-  surface:        #33BBFF,
+  surface:        #33bbff,
   on-surface:     #004466,
-  alt-surface:    #66CCFF,
+  alt-surface:    #47b4eb,
   alt-on-surface: #00334D,
+  outline:        #00aaff80
 );
 
 
@@ -12,7 +13,6 @@ $color-context-primary: (
 $color-context-primary-dark: (
   container:    #00111A,
   on-container: #CCEEFF,
-  outline:      #004466
 );
 
 
@@ -20,5 +20,4 @@ $color-context-primary-dark: (
 $color-context-primary-light: (
   container:    #CCEEFF,
   on-container: #00111A,
-  outline:      #66CCFF
 );

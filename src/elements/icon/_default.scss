@@ -1,0 +1,13 @@
+@use '@core/mixins/flex' as *;
+@use '@core/config/icon' as *;
+
+//? @default: icon
+/// Simple icon element, can use it in any context.
+/// it's recomeded to use as <span> element.
+
+//? usage:
+/// span(class="icon")
+.icon {
+  @include flex($inline: true, $align: center, $justify:center);
+  font-size: $icon-size-default;
+}
