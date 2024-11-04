@@ -1,0 +1,20 @@
+@use 'sass:map';
+@use '@core/config/spacing' as *;
+
+
+/// A consistent wey to generate spacing using predefined
+/// options. (see @core/config/spacing).
+/// @param $size option key.
+/// @return space value in px.
+@function space($size: 1) {
+  @return map.get($spacing-scale, $size);
+}
+
+
+/// A consistent wey to generate spacing using predefined,
+/// using in this case a name as selector of space.
+/// @param $name name of space option.
+/// @return space value in px.
+@function space-named($name: xx-small) {
+  @return map-get($spacing-scale-names, $name);
+}

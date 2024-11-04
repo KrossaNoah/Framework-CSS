@@ -1,0 +1,39 @@
+@use 'sass:meta';
+
+/// Help us to join map configuration to root.
+
+/// @param $module prefix name of variable, for example: 
+/// "clr" (color), "fs" (font size).
+
+/// @param $config-map the map to be load on root.
+
+/// @param $context a keyword for nested map props.
+
+@mixin map-to-root($module, $config-map: (), $context:null) {
+  @each $key, $value in $config-map {
+
+    /// Check if config map has nested map.
+    @if meta.type-of($value) == map {
+      /// recursively resolve nested map.
+      @include map-to-root($module, $value, $key);
+    }
+    
+    /// if has not nested map.
+    @else {
+
+      /// creating name of final root variable that have this
+      /// format: --<module>-<key>-<context?>
+      /// the context is optional and is defined by nested map
+      /// key name.
+      $var-name: "--#{$module}-#{$key}";
+      
+      /// checking for a context.
+      @if $context != null {
+        $var-name: "#{$var-name}-#{$context}";
+      }
+
+      /// setup variable.
+      #{$var-name}: #{$value};
+    }
+  }
+}
