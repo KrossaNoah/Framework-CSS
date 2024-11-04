@@ -1,0 +1,24 @@
+//? @context:primary
+$color-context-primary: (
+  surface:        #33BBFF,
+  on-surface:     #004466,
+  alt-surface:    #66CCFF,
+  alt-on-surface: #00334D,
+);
+
+
+
+//? @mode:dark
+$color-context-primary-dark: (
+  container:    #00111A,
+  on-container: #CCEEFF,
+  outline:      #004466
+);
+
+
+//? @mode:light
+$color-context-primary-light: (
+  container:    #CCEEFF,
+  on-container: #00111A,
+  outline:      #66CCFF
+);

@@ -1,0 +1,76 @@
+@use 'sass:map';
+//? @context
+/// The color system is divided by contexts, each context,
+/// the following list has each context.
+
+/// + @context:default 
+/// + @context:primary 
+
+//? @context-props
+/// Each context has the following props.
+/// @prop container --------- Background color of container 
+/// ------------------------- thats contain surfaces.
+
+/// @prop on-container ------ Text color on container
+
+/// @prop surface ----------- Background of surfaces (elements
+/// ------------------------- on container).
+
+/// @prop on-surface -------- Text color on surface
+
+/// @prop alt-surface ------- variation of surfaces (ideal for 
+/// ------------------------- reflecting interaction like hover
+/// ------------------------- ).
+
+/// @prop alt-on-surface ---- Text color on alt-surface.
+
+/// @prop outline ----------- Heightlight color.
+
+
+//? @mode
+/// Each context adapts 2 modes: dark and light.
+
+
+/// Feel free to add context, considering that:
+/// <!> each context goes in a separate file.
+/// <!> each context has dark and light modes.
+/// <!> each context most be loaded in :root.
+
+
+
+/// using each context
+@use 'light' as *;
+@use 'dark' as *;
+@use 'primary' as *;
+
+
+
+//? default
+/// Exporting color palette, this color apply directly to 
+/// root, are not sensible to dark/light modes.
+$color-palette-map: (
+  dark: $color-context-dark,
+  light: $color-context-light,
+  primary: $color-context-primary
+
+);
+
+
+//? @mode:light
+/// Apply exclusivly to light mode root.
+$color-palette-light:map.merge(
+  $color-context-light,
+  (
+    primary: $color-context-primary-light
+  )
+);
+
+
+//? @mode:dark
+/// Apply exclusivly to light mode root.
+$color-palette-dark: map.merge(
+  $color-context-dark,
+  (
+    primary: $color-context-primary-dark
+  )
+);
