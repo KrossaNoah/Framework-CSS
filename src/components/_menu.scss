@@ -11,6 +11,28 @@
 }
 
 
+
+
+//? @modefier: --sub
+/// a modefier for nested menu 
+.menu {
+  &--sub {
+    font-size: var(--fs-normal);
+    border-left: 1px solid var(--clr-surface);
+    margin-left: space(3);
+    padding-left: space(2);
+  
+    & .menu__item {
+      a {
+        gap: space(2);
+      }
+    }
+  }
+} 
+
+
+
+
 //? @child: __item
 /// Menu item element
 .menu {
@@ -31,7 +53,9 @@
   }
 }
 
+
 //? @child-modefier: __item--active
+/// For active menu link.
 .menu {
   &__item--active {
     a,
@@ -42,21 +66,28 @@
 }
 
 
-
-
-
-//? @modefier: --sub
+//? @child-modefier: __item--disabled
+/// For disabled menu link
 .menu {
-  &--sub {
-    font-size: var(--fs-normal);
-    border-left: 1px solid var(--clr-surface);
-    margin-left: space(3);
-    padding-left: space(2);
-  
-    & .menu__item {
-      a {
-        gap: space(2);
-      }
-    }
+  &__item--disabled {
+    a,
+    a:hover {
+      color: var(--clr-on-container);
+      opacity: .4;
+      cursor: not-allowed;
+    } 
   }
-} 
+}
+
+
+
+//? @child: __separator
+.menu {
+  &__separator {
+    height: 1px;
+    width: 100%;
+    background-color: var(--clr-surface);
+    display: block;
+    margin: space(2) 0;
+  }
+}
