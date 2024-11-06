@@ -27,7 +27,7 @@
     list-style: none;
     position: absolute;
     left: 0;
-    top: $element-height-default + 3px;
+    top: $element-height-default + 1px;
     right: 0;
     background-color: var(--clr-surface);
     padding: space(2);
@@ -53,6 +53,8 @@
     }
   } 
 }
+
+
 //? @child-modefier: __menu--collapsed
 /// This modefier apply to menu and just set display none to
 /// hide the menu.
@@ -65,4 +67,9 @@
 
 //? usage:
 /// div(class="dropdown")
-///   
+///   button(class="dorpdown__button")
+///   ul(class="dropdown__menu")
+///     <menu item>
+///     <menu item>
+///     <menu item>
+///     ...
