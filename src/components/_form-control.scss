@@ -1,0 +1,55 @@
+@use '@core/config/layout/element' as *;
+@use '@core/mixins/flex' as *;
+@use '@core/mixins/transition' as *;
+@use '@core/functions/spacing' as *;
+
+
+//? @base
+.form-control {
+  height: $element-height-default;
+  background-color: var(--clr-surface);
+  color: var(--clr-alt-on-surface);
+  outline: 2px solid transparent;
+
+
+  &:has(&__input:focus) {
+    outline-color: var(--clr-alt-surface);
+    color: var(--clr-on-container);
+
+  }
+  
+  @include transition((color, outline-color));
+  @include flex($align:center);
+}
+
+
+
+//? @child: __input
+/// The input text of form control
+.form-control {
+  &__input {
+    padding-left: space(3);
+    padding-right: space(3);
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: inherit;
+    height: 100%;
+
+  }
+}
+
+
+
+//? @child: __icon
+/// Icon label, can put it in left or right side
+.form-control {
+  &__icon {
+    outline: 1px solid var(--clr-container);
+    min-height: $element-height-default;
+    min-width: $element-height-default;
+    max-width: $element-height-default;
+    max-height: $element-height-default;
+  }
+}
